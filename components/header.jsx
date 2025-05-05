@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { PenBox } from "lucide-react";
 import Image from "next/image";
+import UserMenu from "./user-menu";
 
 async function Header() {
   return (
@@ -13,7 +14,7 @@ async function Header() {
           <h1 className="text-2xl font-bold">
             <Image
               src={"/logo.png"}
-              alt="Zscrum Logo"
+              alt="project Logo"
               width={200}
               height={56}
               className="h-10 w-auto object-contain"
@@ -33,6 +34,7 @@ async function Header() {
             </SignInButton>
           </SignedOut>
           <SignedIn>
+            <UserMenu/>
           </SignedIn>
         </div>
       </nav>
