@@ -37,13 +37,7 @@ export default function Home() {
           Streamline Your Workflow <br />
           <span className="flex mx-auto gap-3 sm:gap-4 items-center">
             with
-            <Image
-              src={"/logo.png"}
-              alt="project Logo"
-              width={400}
-              height={80}
-              className="h-14 sm:h-24 w-auto object-contain"
-            />
+            <h1 className="text-7xl sm:text-7xl lg:text-8xl font-extrabold gradient-title1 pb-6 flex flex-col">ProjectPilot</h1>
           </span>
         </h1>
         <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">

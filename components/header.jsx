@@ -11,14 +11,8 @@ async function Header() {
     <header className="container mx-auto">
       <nav className="py-6 px-4 flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-2xl font-bold">
-            <Image
-              src={"/logo.png"}
-              alt="project Logo"
-              width={200}
-              height={56}
-              className="h-10 w-auto object-contain"
-            />
+          <h1 className="text-5xl sm:text-7xl lg:text-6xl font-extrabold gradient-title1 pb-6 flex flex-col">
+            ProjectPilot
           </h1>
         </Link>
         <div className="flex items-center gap-4">
