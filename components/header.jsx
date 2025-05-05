@@ -3,7 +3,15 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div>
+    <header>
+      <nav>
+        <Link href="/">
+          <h1>ProjectPilot</h1>
+        </Link>
+      </nav>
+
+
+
       <SignedOut>
         <SignInButton />
       </SignedOut>
@@ -11,7 +19,7 @@ const Header = () => {
       <SignedIn>
         <UserButton />
       </SignedIn>
-    </div>
+    </header>
   );
 };
 
