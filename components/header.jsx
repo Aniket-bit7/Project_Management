@@ -1,12 +1,13 @@
+"use client";
+
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { PenBox } from "lucide-react";
-import Image from "next/image";
 import UserMenu from "./user-menu";
 
-async function Header() {
+function Header() {
   return (
     <header className="container mx-auto">
       <nav className="py-6 px-4 flex justify-between items-center">
@@ -28,11 +29,10 @@ async function Header() {
             </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserMenu/>
+            <UserMenu />
           </SignedIn>
         </div>
       </nav>
-
     </header>
   );
 }
