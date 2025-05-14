@@ -1,17 +1,15 @@
-"use client";
-
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
-import { PenBox } from "lucide-react";
 import UserMenu from "./user-menu";
+import { PenBox } from "lucide-react";
 
 function Header() {
   return (
     <header className="container mx-auto">
       <nav className="py-6 px-4 flex justify-between items-center">
-        <Link href="/">
+      <Link href="/onboarding">
           <h1 className="text-5xl sm:text-7xl lg:text-6xl font-extrabold gradient-title1 pb-6 flex flex-col">
             ProjectPilot
           </h1>

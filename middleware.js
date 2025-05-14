@@ -9,14 +9,17 @@ const isProtectedRoute = createRouteMatcher([
   "/sprint(.*)",
 ]);
 
-export default clerkMiddleware((auth, req) => {
-  if (!auth().userId && isProtectedRoute(req)) {
+export default clerkMiddleware(async (auth, req) => {
+  const userId = await auth().userId;
+  const orgId = await auth().orgId;
+
+  if (!userId && isProtectedRoute(req)) {
     return auth().redirectToSignIn();
   }
 
   if (
-    auth().userId &&
-    !auth().orgId &&
+    userId &&
+    !orgId &&
     req.nextUrl.pathname !== "/onboarding" &&
     req.nextUrl.pathname !== "/"
   ) {
