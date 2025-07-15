@@ -8,6 +8,7 @@ import ProgressPage from "./pages/ProgressPage";
 import ContactPage from "./pages/ContactPage";
 import Status from "./pages/Status";
 import Tasks from "./pages/Tasks";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -15,14 +16,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<ProjectsPage />} />
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/status" element={<Status />} />
         <Route path="/tasks" element={<Tasks />} />
-
       </Routes>
     </div>
   );

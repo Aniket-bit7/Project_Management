@@ -11,6 +11,11 @@ html, body {
   background-image: radial-gradient(#585858 1px, transparent 1px);
   background-size: 50px 50px;
 }
+.animated-dotted-background1 {
+  background-color: #000000;
+  background-image: radial-gradient(#585858 1px, transparent 1px);
+  background-size: 30px 30px;
+}
 
 @layer utilities {
   .gradient-title {
