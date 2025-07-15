@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.animated-dotted-background {
+  background-color: #000000;
+  background-image: radial-gradient(#585858 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+@layer utilities {
+  .gradient-title {
+    @apply font-extrabold bg-gradient-to-br from-blue-500 via-blue-100 to-blue-400 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
+  }
+}
+
+@layer utilities {
+  .gradient-title1 {
+    @apply font-extrabold bg-gradient-to-br from-green-500 via-yellow-100 to-red-400 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
+  }
+}
