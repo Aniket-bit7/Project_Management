@@ -23,7 +23,7 @@ const Home = () => {
               Streamline Your Workflow <br /> with
               <span className="gradient-title1"> ProjectPilot</span>
               <p className="text-xl mt-2 text-white">
-                Empower your team with our intuitive project management
+                Empower yourself with our intuitive project management
                 solution.
               </p>
             </div>
@@ -167,8 +167,8 @@ const Home = () => {
           Ready to Transform Your Workflow?
         </h1>
         <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10">
-          Join thousands of teams already using{" "}
-          <span className="gradient-title1 font-semibold">ProjectPilot</span> to
+          Join thousands of people already using{" "}
+          <span className="gradient-title1 font-semibold"> ProjectPilot</span> to
           streamline their projects and boost productivity.
         </p>
         <Link to="/project">

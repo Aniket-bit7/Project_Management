@@ -24,6 +24,12 @@ html, body {
 }
 
 @layer utilities {
+  .gradient-title2 {
+    @apply font-extrabold bg-gradient-to-br from-blue-500 via-blue-300 to-blue-200 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
+  }
+}
+
+@layer utilities {
   .gradient-title1 {
     @apply font-extrabold bg-gradient-to-br from-green-500 via-yellow-100 to-red-400 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
   }

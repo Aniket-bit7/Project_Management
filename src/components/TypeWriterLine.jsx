@@ -5,7 +5,7 @@ const TypewriterLine = () => {
     <div className="text-center text-lg pb-20 text-white gradient-title">
       <Typewriter
         words={[
-          'Navigate yourself and your team to success with ProjectPilot — plan smarter, collaborate better, and deliver faster.'
+          'Navigate yourself to success with ProjectPilot — plan smarter, collaborate better, and deliver faster.'
         ]}
         loop={0}
         cursor

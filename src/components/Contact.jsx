@@ -26,7 +26,7 @@ const ContactSection = () => {
         {/* Button Section */}
         <div className="flex-shrink-0">
           <Link to="/contact">
-            <button className="flex items-center gap-3 bg-white text-black px-6 py-3 rounded hover:bg-gray-600 hover:text-white transition-colors">
+            <button className="flex items-center gap-3 bg-white text-black px-6 py-3 rounded hover:bg-gray-600 hover:text-white transition-colors cursor-pointer">
               <FaComment />
               <span className="font-medium">Contact Us</span>
             </button>

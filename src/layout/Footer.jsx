@@ -112,7 +112,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-sm text-gray-300">
-          © 2025 ProjectPilot. All rights reserved.
+          © 2025 <span className="gradient-title1">ProjectPilot.</span> All rights reserved.
         </div>
       </div>
     </footer>

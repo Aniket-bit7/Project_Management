@@ -28,8 +28,8 @@ function App() {
         <Route path="/project" element={<ProjectsPage />} />
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/status" element={<Status />} />
         <Route path="/tasks" element={<Tasks />} />
+        <Route path="/status/:title" element={<Status />} />
       </Routes>
     </div>
   );

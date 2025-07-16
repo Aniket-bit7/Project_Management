@@ -19,7 +19,7 @@ const ClientTestimonial = ({ title1, title2, data }) => {
           {data.map((items, idx) => (
             <div key={idx} className="w-full">
               {/* Testimonial Text Box */}
-              <div className="bg-white/90 w-full h-auto p-6 md:p-8 border-t-4 border-gray-500 text-sm sm:text-base md:text-[15px]">
+              <div className="bg-white/90 w-full h-auto p-6 md:p-8 border-t-4 border-gray-600 text-sm sm:text-base md:text-[15px]">
                 {items.text}
                 <div className="mt-2 cursor-pointer text-base md:text-lg">
                   {items.stars}
