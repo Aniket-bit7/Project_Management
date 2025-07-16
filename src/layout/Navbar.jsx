@@ -31,7 +31,7 @@ const Navbar = () => {
     <header>
       <nav className="py-4 lg:py-6 px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/">
+        <Link to="/home">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold gradient-title1">
             ProjectPilot
           </h1>
@@ -59,7 +59,7 @@ const Navbar = () => {
           </Link>
 
           <Link to="/project">
-            <button className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition">
+            <button className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition cursor-pointer">
               <PenBox size={18} />
               <span className="hidden md:inline">Create Project</span>
             </button>
