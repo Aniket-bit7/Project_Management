@@ -1,9 +1,14 @@
-import React from 'react'
+
+import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
 
 const Tasks = () => {
   return (
-    <div>Tasks</div>
-  )
-}
+    <section className="text-white min-h-screen bg-black flex flex-col">
+      <Navbar />
+      <Footer />
+    </section>
+  );
+};
 
-export default Tasks
+export default Tasks;

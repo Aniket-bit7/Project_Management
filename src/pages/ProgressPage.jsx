@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
 
 const ProgressPage = () => {
   return (
-    <div>ProgressPage</div>
-  )
-}
+    <section className="text-white min-h-screen overflow-x-hidden">
+      <Navbar />
+      <Footer />
+    </section>
+  );
+};
 
-export default ProgressPage
+export default ProgressPage;

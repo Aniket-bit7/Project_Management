@@ -36,10 +36,11 @@ const Home = () => {
                   />{" "}
                 </button>
               </Link>
-
+              <Link to="/about">
               <button className="border border-white text-white px-3 py-2 rounded cursor-pointer">
                 Learn More
               </button>
+              </Link>
             </div>
           </div>
           <div className="w-120 h-120 ml-20 pt-10 mb-15">
@@ -55,17 +56,17 @@ const Home = () => {
           {featuresData.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between border border-gray-900 shadow-md p-8 rounded-xl bg-white/5 min-h-[340px]"
+              className="flex flex-col justify-between border border-gray-900 shadow-md p-8 rounded-xl bg-white/5 min-h-[340px] transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-white group"
             >
-              <div className="mb-4">{iconMap[feature.icon]}</div>
+              <div className="mb-4 transition-colors duration-300 group-hover:text-black">{iconMap[feature.icon]}</div>
               <div className="flex flex-col gap-2 flex-grow">
-                <h1 className="text-white text-2xl font-semibold">
+                <h1 className="text-white text-2xl font-semibold transition-colors duration-300 group-hover:text-black">
                   {feature.title}
                 </h1>
-                <h3 className="text-lg text-gray-300 font-medium">
+                <h3 className="text-lg text-gray-300 font-medium transition-colors duration-300 group-hover:text-gray-800">
                   {feature.tagline}
                 </h3>
-                <p className="text-gray-400 font-medium leading-relaxed">
+                <p className="text-gray-400 font-medium leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
                   {feature.description}
                 </p>
               </div>
@@ -168,7 +169,7 @@ const Home = () => {
         </h1>
         <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10">
           Join thousands of people already using{" "}
-          <span className="gradient-title1 font-semibold"> ProjectPilot</span> to
+          <span className="gradient-title1 font-semibold">ProjectPilot</span>to
           streamline their projects and boost productivity.
         </p>
         <Link to="/project">

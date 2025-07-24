@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaEnvelope,
 } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,11 +21,11 @@ const Footer = () => {
               ProjectPilot
             </div>
             <p className="text-sm text-white leading-relaxed mb-4">
-              ProjectPilot – Empowering Efficient Team Collaboration
+              ProjectPilot – Empowering efficient project management.
             </p>
             <p className="text-sm text-white leading-relaxed">
               ProjectPilot is your ultimate task and project management platform designed
-              to streamline team productivity, track progress visually, and enable
+              to streamline productivity, track progress visually, and enable
               seamless workflow from planning to completion.
             </p>
             <p className="text-sm text-gray-400 mt-4">
@@ -39,41 +40,36 @@ const Footer = () => {
             <div className="flex flex-wrap text-sm text-gray-400">
               <ul className="w-1/2 space-y-2">
                 <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
+                  <Link to="/home" className="text-white hover:text-blue-300 flex items-center">
                     <span className="mr-2 gradient-title">›</span>Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
+                  <Link to="/about" className="text-white hover:text-blue-300 flex items-center">
                     <span className="mr-2 gradient-title">›</span>About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
+                  <Link to="/progress" className="text-white hover:text-blue-300 flex items-center">
                     <span className="mr-2 gradient-title">›</span>Progress
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
+                  <Link to="/project" className="text-white hover:text-blue-300 flex items-center">
                     <span className="mr-2 gradient-title">›</span>Projects
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="w-1/2 space-y-2">
                 <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
-                    <span className="mr-2 gradient-title">›</span>Status
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
+                  <Link to="/tasks" className="text-white hover:text-blue-300 flex items-center">
                     <span className="mr-2 gradient-title">›</span>Tasks
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-white hover:text-blue-300 flex items-center">
+                  <Link to="/contact" className="text-white hover:text-blue-300 flex items-center">
                     <span className="mr-2 gradient-title">›</span>Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

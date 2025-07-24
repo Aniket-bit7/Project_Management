@@ -14,16 +14,12 @@ const ProjectsPage = () => {
         <Navbar />
         <p className="gradient-title text-center text-7xl flex flex-col gap-2 mt-10">
           Projects
-          <span className="text-white text-xl font-medium">
-            <Link className="cursor-pointer" to="/about">About</Link> |{" "}
-            <Link className="cursor-pointer" to="/contact">Contact</Link>
-          </span>
         </p>
       </div>
 
       <div className="p-8 flex flex-col gap-8">
         <h1 className="font-medium text-4xl text-center">
-          Welcome back, <span className="gradient-title1">{userName}</span>
+          Welcome back, <span className="gradient-title">{userName}</span>
         </h1>
         <ResumeCard/>
       </div>

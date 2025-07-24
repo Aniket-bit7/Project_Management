@@ -16,6 +16,11 @@ html, body {
   background-image: radial-gradient(#585858 1px, transparent 1px);
   background-size: 30px 30px;
 }
+.animated-dotted-background2 {
+  background-color: #080132;
+  background-image: radial-gradient(#585858 1px, transparent 1px);
+  background-size: 15px 15px;
+}
 
 @layer utilities {
   .gradient-title {
@@ -25,7 +30,7 @@ html, body {
 
 @layer utilities {
   .gradient-title2 {
-    @apply font-extrabold bg-gradient-to-br from-blue-500 via-blue-300 to-blue-200 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
+    @apply font-extrabold bg-gradient-to-br from-blue-500 via-blue-400 to-blue-300 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
   }
 }
 
@@ -34,3 +39,4 @@ html, body {
     @apply font-extrabold bg-gradient-to-br from-green-500 via-yellow-100 to-red-400 bg-clip-text tracking-wide text-transparent pr-2 pb-2;
   }
 }
+
