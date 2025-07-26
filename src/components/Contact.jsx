@@ -1,9 +1,9 @@
 import { FaComment } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const ContactSection = () => {
+const ContactSection = ({background}) => {
   return (
-    <section className="bg-black animated-dotted-background">
+    <section className={`${background}`}>
       <div className="flex flex-col md:flex-row items-center justify-between px-4 sm:px-12 py-16 w-full max-w-screen-xl mx-auto gap-8">
         
         {/* Text Section */}

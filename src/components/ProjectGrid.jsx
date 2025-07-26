@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { projects } from "../data/projects";
+import { Trash2 } from "lucide-react"; 
 
 const ProjectGrid = () => {
+  const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
+    setProjects(storedProjects);
+  }, []);
 
   const handleCardClick = (projectId) => {
     navigate(`/status/${projectId}`);
+  };
+
+  const handleDelete = (projectId, e) => {
+    e.stopPropagation(); 
+    const updatedProjects = projects.filter((p) => p.id !== projectId);
+    setProjects(updatedProjects);
+    localStorage.setItem("projects", JSON.stringify(updatedProjects));
   };
 
   return (
@@ -21,16 +35,19 @@ const ProjectGrid = () => {
             onClick={() => handleCardClick(project.id)}
           >
             <div className="flex min-h-[200px]">
-              <div
-                className={`${project.iconBg} w-2 rounded-tl-lg rounded-bl-lg`}
-              ></div>
+              <div className={`${project.iconBg} w-2 rounded-tl-lg rounded-bl-lg`}></div>
               <div className="flex-1 p-6">
-                <div className="flex items-center gap-4">
-                  <div>
-                    <h3 className="font-bold text-xl text-gray-800 group-hover:text-white">
-                      {project.title}
-                    </h3>
-                  </div>
+                <div className="flex items-center justify-between">
+                  <h3 className="font-bold text-xl text-gray-800 group-hover:text-white">
+                    {project.title}
+                  </h3>
+                  <button
+                    onClick={(e) => handleDelete(project.id, e)}
+                    className="text-red-600 hover:text-red-800"
+                    title="Delete Project"
+                  >
+                    <Trash2 className="w-5 h-5 cursor-pointer hover:text-white" />
+                  </button>
                 </div>
 
                 <div className="mt-6">

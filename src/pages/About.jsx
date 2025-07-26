@@ -50,7 +50,7 @@ const About = () => {
           className="mb-10"
         ></iframe>
       </div>
-      <ContactSection />
+      <ContactSection background="animated-dotted-background1"/>
       <section className="bg-black py-20 px-6 text-white text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6">
           Ready to Transform Your Workflow?
