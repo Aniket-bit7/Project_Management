@@ -118,7 +118,7 @@ const StatusPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
               {renderSection("To Do", "todo", "blue")}
               {renderSection("In Progress", "inprogress", "yellow")}
               {renderSection("In Review", "review", "purple")}

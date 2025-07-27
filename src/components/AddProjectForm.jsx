@@ -109,7 +109,7 @@ const AddProjectForm = () => {
 
       <button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-medium"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-medium cursor-pointer"
       >
         Create Project
       </button>

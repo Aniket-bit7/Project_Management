@@ -46,7 +46,7 @@ const ProjectGrid = () => {
                     className="text-red-600 hover:text-red-800"
                     title="Delete Project"
                   >
-                    <Trash2 className="w-5 h-5 cursor-pointer hover:text-white" />
+                    <Trash2 className="w-5 h-5 cursor-pointer group-hover:text-white" />
                   </button>
                 </div>
 
