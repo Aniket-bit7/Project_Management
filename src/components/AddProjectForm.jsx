@@ -10,11 +10,10 @@ const AddProjectForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!title || !deadline || !description || !iconBg) return;
 
     const newProject = {
-      id: Date.now(), // Unique ID based on timestamp
+      id: Date.now(),
       title,
       deadline,
       description,
@@ -25,16 +24,10 @@ const AddProjectForm = () => {
       iconBg,
     };
 
-    // Get current projects from localStorage
     const existingProjects = JSON.parse(localStorage.getItem("projects")) || [];
-
-    // Add new project to the list
     const updatedProjects = [...existingProjects, newProject];
-
-    // Save back to localStorage
     localStorage.setItem("projects", JSON.stringify(updatedProjects));
 
-    // Reset form
     setTitle("");
     setDeadline("");
     setDescription("");
@@ -46,7 +39,7 @@ const AddProjectForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-[50%] mt-10 mb-10 bg-black border border-gray-800 rounded-lg p-6 shadow-lg"
+      className="w-full max-w-xl mx-auto mt-10 mb-10 bg-black border border-gray-800 rounded-lg p-6 shadow-lg px-4"
     >
       <h2 className="text-2xl font-semibold mb-6 text-center text-white">
         Add New Project
