@@ -82,21 +82,22 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="animated-dotted-background flex flex-col gap-8 pb-10">
-        <h1 className="text-white text-4xl text-center mt-15 font-semibold">
+      <section className="animated-dotted-background flex flex-col gap-6 sm:gap-8 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-0">
+        <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl text-center mt-10 font-semibold">
           Trusted by Industry Leaders
         </h1>
         <CompanyCarousel />
       </section>
+
       <section className="flex flex-col mt-12 sm:mt-20 justify-center items-center px-4 py-4">
-        <div className="flex flex-col mb-12 sm:mb-20 text-center">
-          <h3 className="font-bold tracking-widest gradient-title text-base sm:text-lg">
+        <div className="flex flex-col mb-10 sm:mb-16 lg:mb-20 text-center px-4 sm:px-6 lg:px-0">
+          <h3 className="font-bold tracking-widest gradient-title text-sm sm:text-base md:text-lg">
             OUR LATEST SERVICES
           </h3>
-          <h1 className="font-bold text-white text-4xl sm:text-5xl lg:text-7xl">
+          <h1 className="font-bold text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl leading-tight">
             Crafting Innovative Solutions for
           </h1>
-          <h1 className="font-bold text-white text-4xl sm:text-5xl lg:text-7xl">
+          <h1 className="font-bold text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl leading-tight">
             Your Digital Success
           </h1>
         </div>

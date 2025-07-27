@@ -110,7 +110,7 @@ const Navbar = () => {
             </Link>
 
             <Link to="/project" onClick={() => setShowMobileMenu(false)}>
-              <button className="w-full flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition">
+              <button className=" flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition">
                 <PenBox size={18} />
                 Create Project
               </button>
