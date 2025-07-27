@@ -10,14 +10,14 @@ so you can focus on getting things done instead of managing chaos.
 Stay organized, hit deadlines, and bring your ideas to life — all in one place.`;
 
   return (
-    <div className="flex flex-col mt-5 gap-4">
-      <h1 className="text-center text-4xl font-medium">
+    <div className="flex flex-col mt-5 gap-4 px-4 sm:px-6 lg:px-12">
+      <h1 className="text-center text-3xl sm:text-4xl font-medium">
         What is <span className="gradient-title">ProjectPilot</span>?
       </h1>
 
-      <div className="flex flex-col lg:flex-row justify-between items-center px-6 lg:px-12 py-8 gap-10">
+      <div className="flex flex-col lg:flex-row justify-between items-center py-6 sm:py-8 gap-8 sm:gap-10">
         {/* Typewriter effect */}
-        <pre className="text-xl text-white pb-15">
+        <div className="w-full lg:w-1/2 text-lg sm:text-xl text-white whitespace-pre-wrap">
           <Typewriter
             words={[typewriterText]}
             loop={1}
@@ -25,11 +25,11 @@ Stay organized, hit deadlines, and bring your ideas to life — all in one place
             deleteSpeed={0}
             delaySpeed={1000}
           />
-        </pre>
+        </div>
 
         <img
           src="https://media.istockphoto.com/id/1411195926/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.jpg?s=612x612&w=0&k=20&c=5A0CEsRbIrgnci0Q7LSxbrUZ1pliXy8C04ffpnjnVIw="
-          className="rounded-xl w-full max-w-md h-70 object-cover mr-15"
+          className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-cover"
           alt="Project management"
         />
       </div>
