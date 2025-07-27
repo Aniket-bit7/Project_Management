@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const AnimatedText = () => {
   return (
-    <div className="text-2xl font-extrabold gradient-title h-16 flex flex-col items-center justify-center leading-tight">
+    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold gradient-title min-h-[3.5rem] sm:min-h-[4rem] flex flex-col items-center justify-center text-center px-2 leading-snug">
       <Typewriter
         words={[
           'Streamline Your Workflow',

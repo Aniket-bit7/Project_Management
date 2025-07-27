@@ -13,29 +13,29 @@ const Footer = () => {
   return (
     <footer className="animated-dotted-background text-gray-300 py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-32 border-b border-gray-700 pb-4 mb-8">
-          
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-32 border-b border-gray-700 pb-6 mb-8">
+
           {/* Logo & Description */}
-          <div className="col-span-1 md:mb-0 mb-8">
-            <div className="gradient-title1 text-2xl font-bold mb-4">
+          <div className="col-span-1 mb-6 sm:mb-0">
+            <div className="gradient-title1 text-2xl sm:text-3xl font-bold mb-4">
               ProjectPilot
             </div>
-            <p className="text-sm text-white leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-white leading-relaxed mb-4 max-w-md">
               ProjectPilot – Empowering efficient project management.
             </p>
-            <p className="text-sm text-white leading-relaxed">
+            <p className="text-sm sm:text-base text-white leading-relaxed max-w-md">
               ProjectPilot is your ultimate task and project management platform designed
               to streamline productivity, track progress visually, and enable
               seamless workflow from planning to completion.
             </p>
-            <p className="text-sm text-gray-400 mt-4">
+            <p className="text-sm sm:text-base text-gray-400 mt-4 max-w-md">
               <span className="font-semibold text-white">Address:</span>{" "}
               Newton School of Technology, Rishihood University, Sonipat, Haryana, India, 201001
             </p>
           </div>
 
           {/* Pages (Non-clickable) */}
-          <div className="col-span-1 md:ml-6 md:mb-0 mb-8">
+          <div className="col-span-1 mb-6 sm:mb-0 sm:ml-2">
             <h4 className="text-lg font-semibold mb-4 gradient-title">Pages</h4>
             <div className="flex flex-wrap text-sm text-gray-400">
               <ul className="w-1/2 space-y-2">
@@ -78,24 +78,24 @@ const Footer = () => {
           {/* Social Media */}
           <div className="col-span-1">
             <h4 className="text-lg font-semibold mb-4 gradient-title">Stay Connected</h4>
-            <div className="flex flex-wrap items-center text-white gap-4 mb-4">
-              <a href="#" className="hover:text-[#008080] text-xl">
+            <div className="flex flex-wrap items-center gap-4 mb-4 text-white text-xl">
+              <a href="#" className="hover:text-[#008080]">
                 <FaXTwitter />
               </a>
-              <a href="#" className="hover:text-[#1877F3] text-xl">
+              <a href="#" className="hover:text-[#1877F3]">
                 <FaFacebookF />
               </a>
-              <a href="#" className="hover:text-[#0A66C2] text-xl">
+              <a href="#" className="hover:text-[#0A66C2]">
                 <FaLinkedinIn />
               </a>
-              <a href="#" className="hover:text-[#FF0000] text-xl">
+              <a href="#" className="hover:text-[#FF0000]">
                 <FaYoutube />
               </a>
-              <a href="#" className="hover:text-[#E4405F] text-xl">
+              <a href="#" className="hover:text-[#E4405F]">
                 <FaInstagram />
               </a>
             </div>
-            <div className="flex flex-col gap-1 text-white text-sm mt-2">
+            <div className="flex flex-col gap-2 text-white text-sm mt-2">
               <a href="mailto:support@projectpilot.in" className="flex items-center gap-2 hover:text-blue-300">
                 <FaEnvelope className="text-base" /> support@projectpilot.in
               </a>
