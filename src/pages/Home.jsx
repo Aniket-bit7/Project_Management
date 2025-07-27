@@ -17,56 +17,63 @@ const Home = () => {
     <section className="min-h-screen overflow-x-hidden">
       <div className="animated-dotted-background1">
         <Navbar />
-        <div className="flex items-center gap-16">
-          <div className="flex flex-col gap-6">
-            <div className="gradient-title text-6xl ml-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 py-10 lg:py-0">
+          {/* Text Section */}
+          <div className="w-full text-left px-4 sm:px-6 lg:px-0">
+            <div className="gradient-title text-4xl sm:text-5xl lg:text-6xl lg:ml-12">
               Streamline Your Workflow <br /> with
               <span className="gradient-title1"> ProjectPilot</span>
-              <p className="text-xl mt-2 text-white">
-                Empower yourself with our intuitive project management
-                solution.
+              <p className="text-base sm:text-lg lg:text-xl mt-2 text-white">
+                Empower yourself with our intuitive project management solution.
               </p>
             </div>
-            <div className="ml-12 flex items-center gap-10">
+
+            <div className="mt-6 flex flex-col sm:flex-row gap-4 sm:gap-10 lg:ml-12">
               <Link to="/project">
-                <button className="bg-white rounded px-3 py-2 flex items-center gap-2 cursor-pointer">
-                  Get Started{" "}
-                  <FaArrowRight
-                    style={{ fontSize: "12px", fontWeight: "1px" }}
-                  />{" "}
+                <button className="bg-white rounded px-4 py-2 flex items-center gap-2 cursor-pointer">
+                  Get Started <FaArrowRight style={{ fontSize: "12px" }} />
                 </button>
               </Link>
               <Link to="/about">
-              <button className="border border-white text-white px-3 py-2 rounded cursor-pointer">
-                Learn More
-              </button>
+                <button className="border border-white text-white px-4 py-2 rounded cursor-pointer">
+                  Learn More
+                </button>
               </Link>
             </div>
           </div>
-          <div className="w-120 h-120 ml-20 pt-10 mb-15">
-            <img src="src/assets/download (1).png" />
+
+          {/* Image Section */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0 px-4 sm:px-6 lg:px-0">
+            <img
+              src="src/assets/download (1).png"
+              alt="Hero"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[480px] object-contain"
+            />
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 p-14">
-        <h1 className="text-center text-4xl font-medium text-white">
+      <div className="flex flex-col gap-6 px-4 sm:px-6 lg:px-14 py-10">
+        <h1 className="text-center text-2xl sm:text-3xl lg:text-4xl font-medium text-white">
           Key Features
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6 mt-6">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 px-2 sm:px-4 lg:px-6 mt-4 sm:mt-6">
           {featuresData.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between border border-gray-900 shadow-md p-8 rounded-xl bg-white/5 min-h-[340px] transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-white group"
+              className="flex flex-col justify-between border border-gray-900 shadow-md p-6 sm:p-8 rounded-xl bg-white/5 min-h-[320px] sm:min-h-[340px] transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-white group"
             >
-              <div className="mb-4 transition-colors duration-300 group-hover:text-black">{iconMap[feature.icon]}</div>
+              <div className="mb-4 transition-colors duration-300 group-hover:text-black">
+                {iconMap[feature.icon]}
+              </div>
               <div className="flex flex-col gap-2 flex-grow">
-                <h1 className="text-white text-2xl font-semibold transition-colors duration-300 group-hover:text-black">
+                <h1 className="text-white text-xl sm:text-2xl font-semibold transition-colors duration-300 group-hover:text-black">
                   {feature.title}
                 </h1>
-                <h3 className="text-lg text-gray-300 font-medium transition-colors duration-300 group-hover:text-gray-800">
+                <h3 className="text-md sm:text-lg text-gray-300 font-medium transition-colors duration-300 group-hover:text-gray-800">
                   {feature.tagline}
                 </h3>
-                <p className="text-gray-400 font-medium leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
                   {feature.description}
                 </p>
               </div>
@@ -74,6 +81,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+
       <section className="animated-dotted-background flex flex-col gap-8 pb-10">
         <h1 className="text-white text-4xl text-center mt-15 font-semibold">
           Trusted by Industry Leaders
@@ -162,7 +170,7 @@ const Home = () => {
         data={clients}
       />
 
-      <ContactSection background="animated-dotted-background1"/>
+      <ContactSection background="animated-dotted-background1" />
       <section className="bg-black py-20 px-6 text-white text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6">
           Ready to Transform Your Workflow?
@@ -183,7 +191,7 @@ const Home = () => {
           </motion.button>
         </Link>
       </section>
-      <Footer/>
+      <Footer />
     </section>
   );
 };
