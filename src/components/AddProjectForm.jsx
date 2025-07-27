@@ -39,7 +39,7 @@ const AddProjectForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-xl mx-auto mt-10 mb-10 bg-black border border-gray-800 rounded-lg p-6 shadow-lg px-4"
+      className="w-[50%] mt-10 mb-10 bg-black border border-gray-800 rounded-lg p-6 shadow-lg px-4"
     >
       <h2 className="text-2xl font-semibold mb-6 text-center text-white">
         Add New Project
