@@ -25,7 +25,7 @@ export const useFirebase = () => useContext(FirebaseContext);
 
 const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth(firebaseApp);
-const googleProvider = new GoogleAuthProvider(null);
+
 
 export const FirebaseProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -46,9 +46,6 @@ export const FirebaseProvider = ({ children }) => {
   const signinUserWithEmailAndPassword = (email, password) =>
     signInWithEmailAndPassword(firebaseAuth, email, password);
 
-  const signinWithGoogle = () =>
-    signInWithPopup(firebaseAuth, googleProvider);
-
   const signOutUser = () => signOut(firebaseAuth);
 
   const isLoggedIn = !!user;
@@ -56,7 +53,6 @@ export const FirebaseProvider = ({ children }) => {
   return (
     <FirebaseContext.Provider
       value={{
-        signinWithGoogle,
         signUpUserWithEmailAndPassword,
         signinUserWithEmailAndPassword,
         signOutUser,

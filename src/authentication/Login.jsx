@@ -92,21 +92,6 @@ const Login = () => {
             Login
           </button>
 
-          <div className="text-white text-sm opacity-70 text-center">or</div>
-
-          <button
-            onClick={firebase.signinWithGoogle}
-            type="button"
-            className="flex items-center justify-center gap-2 w-full border border-white/30 hover:bg-white hover:text-black text-white font-semibold py-3 rounded-lg transition duration-300 cursor-pointer text-sm sm:text-base"
-          >
-            <img
-              src="/icons8-google-48.png"
-              alt="Google Icon"
-              className="w-5 h-5"
-            />
-            Login with Google
-          </button>
-
           <p className="text-sm text-white text-center">
             Don't have an account?
             <Link to="/register">
