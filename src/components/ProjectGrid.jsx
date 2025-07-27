@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Trash2 } from "lucide-react";
 
-const ProjectGrid = ({searchTerm}) => {
+const ProjectGrid = ({ searchTerm }) => {
   const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
 
@@ -27,11 +27,11 @@ const ProjectGrid = ({searchTerm}) => {
   );
 
   return (
-    <div className="px-6 py-10 bg-black rounded-md w-full">
-      <h2 className="text-3xl font-bold gradient-title mb-10 text-center">
+    <div className="px-4 sm:px-6 py-10 bg-black rounded-md w-full">
+      <h2 className="text-2xl sm:text-3xl font-bold gradient-title mb-8 sm:mb-10 text-center">
         Your Projects
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
             <div
@@ -39,25 +39,25 @@ const ProjectGrid = ({searchTerm}) => {
               className="bg-white border border-gray-300 rounded-xl shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:bg-[#080132] group"
               onClick={() => handleCardClick(project.id)}
             >
-              <div className="flex min-h-[200px]">
+              <div className="flex flex-col sm:flex-row min-h-[200px]">
                 <div
                   className={`${project.iconBg} w-2 rounded-tl-lg rounded-bl-lg`}
                 ></div>
-                <div className="flex-1 p-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold text-xl text-gray-800 group-hover:text-white">
+                <div className="flex-1 p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <h3 className="font-bold text-lg sm:text-xl text-gray-800 group-hover:text-white">
                       {project.title}
                     </h3>
                     <button
                       onClick={(e) => handleDelete(project.id, e)}
-                      className="text-red-600 hover:text-red-800"
+                      className="text-red-600 hover:text-red-800 sm:self-start sm:mt-0"
                       title="Delete Project"
                     >
                       <Trash2 className="w-5 h-5 cursor-pointer group-hover:text-white" />
                     </button>
                   </div>
 
-                  <div className="mt-6">
+                  <div className="mt-4 sm:mt-6">
                     <h4 className="text-sm font-semibold text-gray-500 mb-1 group-hover:text-white/80">
                       Quick Updates
                     </h4>
