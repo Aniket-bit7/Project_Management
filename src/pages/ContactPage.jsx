@@ -11,16 +11,19 @@ const ContactPage = () => {
     e.preventDefault();
     setSubmitted(true);
   };
+
   return (
     <section className="text-white min-h-screen overflow-x-hidden bg-black">
       <Navbar />
-      <section className="w-full min-h-screen animated-dotted-background1 flex justify-center items-center">
+
+      {/* Contact Form Section */}
+      <section className="w-full min-h-screen animated-dotted-background1 flex justify-center items-center px-4 sm:px-6 md:px-10">
         {!submitted ? (
-          <div className="w-full max-w-4xl bg-gray-900 shadow-md rounded-lg p-8">
-            <h2 className="text-3xl font-semibold mb-6 text-center">
+          <div className="w-full max-w-4xl bg-gray-900 shadow-[0_2px_8px_rgba(255,255,255,0.15)] rounded-lg p-6 sm:p-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
               Contact Us
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>
                 <input
@@ -56,7 +59,7 @@ const ContactPage = () => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="bg-white/90 font-medium text-black py-2 px-6 rounded-md hover:bg-black hover:text-white transition cursor-pointer"
+                  className="bg-white/90 font-medium text-black py-2 px-6 rounded-md hover:bg-black hover:text-white transition cursor-pointer w-full sm:w-auto"
                 >
                   Send Message
                 </button>
@@ -65,10 +68,10 @@ const ContactPage = () => {
           </div>
         ) : (
           <div className="text-center max-w-2xl mx-auto px-4 py-20">
-            <h2 className="text-3xl font-semibold text-green-400 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-green-400 mb-4">
               Thank You!
             </h2>
-            <p className="text-gray-300 text-lg">
+            <p className="text-base sm:text-lg text-gray-300">
               We’ve received your message. We’ll get back to you within 24
               hours.
             </p>
@@ -76,11 +79,12 @@ const ContactPage = () => {
         )}
       </section>
 
-      <section className="bg-black py-20 px-6 text-white text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-6">
+      {/* CTA Section */}
+      <section className="bg-black py-16 sm:py-20 px-4 sm:px-6 text-white text-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           Ready to Transform Your Workflow?
         </h1>
-        <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10">
+        <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8 sm:mb-10">
           Join thousands of people already using{" "}
           <span className="gradient-title1 font-semibold">ProjectPilot</span> to
           streamline their projects and boost productivity.
