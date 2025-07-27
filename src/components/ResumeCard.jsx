@@ -26,7 +26,7 @@ const ResumeCard = () => {
 
       <div className="flex items-center justify-center gap-4 sm:gap-6 mt-6">
         <Link to="/tasks">
-          <button className="text-black font-medium bg-white px-4 py-2 rounded-md text-sm sm:text-base">
+          <button className="text-black font-medium bg-white px-4 py-2 rounded-md text-sm sm:text-base cursor-pointer">
             + Add New Project
           </button>
         </Link>
