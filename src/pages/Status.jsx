@@ -23,7 +23,6 @@ const StatusPage = () => {
     done: "",
   });
 
-  // Load project from localStorage
   useEffect(() => {
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const foundProject = storedProjects.find((p) => p.id.toString() === id);
@@ -42,7 +41,6 @@ const StatusPage = () => {
     setProject(foundProject);
   }, [id]);
 
-  // Save updated project
   const saveProject = (updatedProject) => {
     const allProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const newList = allProjects.map((p) =>
@@ -52,7 +50,6 @@ const StatusPage = () => {
     setProject(updatedProject);
   };
 
-  // Add new task
   const handleAddTask = (section) => {
     if (!taskInput[section].trim()) return;
     const updatedProject = { ...project };
@@ -68,7 +65,6 @@ const StatusPage = () => {
 
     updatedProject[section] = updatedProject[section] + 1;
 
-    // Recalculate stats
     const allTasks = [
       ...(updatedProject.todoTasks || []),
       ...(updatedProject.inprogressTasks || []),
@@ -82,7 +78,6 @@ const StatusPage = () => {
     saveProject(updatedProject);
   };
 
-  // Delete task
   const handleDeleteTask = (section, taskId) => {
     const updatedProject = { ...project };
     updatedProject[section + "Tasks"] = updatedProject[
@@ -91,7 +86,6 @@ const StatusPage = () => {
 
     updatedProject[section] = Math.max(0, updatedProject[section] - 1);
 
-    // Recalculate stats
     const allTasks = [
       ...(updatedProject.todoTasks || []),
       ...(updatedProject.inprogressTasks || []),
@@ -104,7 +98,6 @@ const StatusPage = () => {
     saveProject(updatedProject);
   };
 
-  // Render each section (To Do, In Progress, etc.)
   const renderSection = (title, key, color) => (
     <div className="bg-white/90 rounded-lg shadow-md p-4 w-full">
       <h3 className={`text-xl font-semibold mb-8 text-${color}-700`}>
@@ -141,7 +134,7 @@ const StatusPage = () => {
         />
         <button
           onClick={() => handleAddTask(key)}
-          className={`bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-4 py-1 rounded-md`}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded-md"
         >
           Add
         </button>
@@ -152,20 +145,22 @@ const StatusPage = () => {
   return (
     <section className="min-h-screen overflow-x-hidden text-black animated-dotted-background1">
       <Navbar />
-      <div className="p-6">
+      <div className="px-4 sm:px-6 py-6">
         {project ? (
           <>
             <div className="text-center mb-10">
               <h1 className="text-4xl font-bold mb-2 gradient-title">
                 {project.title}
               </h1>
-              <p className="text-white/90 text-lg">{project.description}</p>
-              <p className="text-base text-gray-200 mt-1">
+              <p className="text-white/90 text-base sm:text-lg">
+                {project.description}
+              </p>
+              <p className="text-sm sm:text-base text-gray-200 mt-1">
                 Deadline: {project.deadline}
               </p>
             </div>
 
-            {/* Columns */}
+            {/* Task Sections */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
               {renderSection("To Do", "todo", "blue")}
               {renderSection("In Progress", "inprogress", "yellow")}
@@ -180,17 +175,16 @@ const StatusPage = () => {
         )}
       </div>
 
-      {/* Progress Bar Section */}
+      {/* Progress & Chart */}
       {project && project.totalTasks > 0 && (
-        <div className="w-full animated-dotted-background3 max-w-3xl mx-auto mt-6  p-4 rounded shadow-md">
-          <div className="flex items-center gap-2 mb-2 text-left text-xl font-medium text-gray-700">
+        <div className="w-full px-4 sm:px-6 animated-dotted-background3 max-w-3xl mx-auto mt-6 p-4 rounded shadow-md">
+          <div className="flex items-center gap-2 mb-2 text-left text-base sm:text-xl font-medium text-gray-700">
             Progress:{" "}
-            <span className="text-lg text-[#080132]">
+            <span className="text-[#080132]">
               {Math.round((project.completedTasks / project.totalTasks) * 100)}%
             </span>
           </div>
 
-          {/* Progress Bar */}
           <div className="w-full border border-black rounded-full h-4 overflow-hidden mb-4">
             <div
               className="bg-[#3b04a3ff] h-4 transition-all duration-500"
@@ -202,15 +196,15 @@ const StatusPage = () => {
             ></div>
           </div>
 
-          {/* Task Summary */}
           <div className="flex justify-center text-sm font-medium text-gray-800 mb-6">
-            <span className="font-medium text-lg flex items-center">
-              <ListCheck /> Total: {project.totalTasks}
+            <span className="font-medium text-base flex items-center gap-1">
+              <ListCheck size={18} />
+              Total: {project.totalTasks}
             </span>
           </div>
 
-          <div className="w-full h-64">
-            <ResponsiveContainer>
+          <div className="w-full max-w-md mx-auto h-64">
+            <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={[
