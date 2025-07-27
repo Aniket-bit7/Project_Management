@@ -2,8 +2,16 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
-import { XCircle } from "lucide-react"; 
+import { ListCheck, XCircle } from "lucide-react";
 import ContactSection from "../components/Contact";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const StatusPage = () => {
   const { id } = useParams();
@@ -19,10 +27,22 @@ const StatusPage = () => {
   useEffect(() => {
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const foundProject = storedProjects.find((p) => p.id.toString() === id);
+    if (foundProject) {
+      const allTasks = [
+        ...(foundProject.todoTasks || []),
+        ...(foundProject.inprogressTasks || []),
+        ...(foundProject.reviewTasks || []),
+        ...(foundProject.doneTasks || []),
+      ];
+
+      foundProject.totalTasks = allTasks.length;
+      foundProject.completedTasks = (foundProject.doneTasks || []).length;
+    }
+
     setProject(foundProject);
   }, [id]);
 
-  // Helper to save updated project back to localStorage
+  // Save updated project
   const saveProject = (updatedProject) => {
     const allProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const newList = allProjects.map((p) =>
@@ -32,7 +52,7 @@ const StatusPage = () => {
     setProject(updatedProject);
   };
 
-  // Handle adding a new task to a column
+  // Add new task
   const handleAddTask = (section) => {
     if (!taskInput[section].trim()) return;
     const updatedProject = { ...project };
@@ -47,24 +67,49 @@ const StatusPage = () => {
     });
 
     updatedProject[section] = updatedProject[section] + 1;
+
+    // Recalculate stats
+    const allTasks = [
+      ...(updatedProject.todoTasks || []),
+      ...(updatedProject.inprogressTasks || []),
+      ...(updatedProject.reviewTasks || []),
+      ...(updatedProject.doneTasks || []),
+    ];
+    updatedProject.totalTasks = allTasks.length;
+    updatedProject.completedTasks = (updatedProject.doneTasks || []).length;
+
     setTaskInput({ ...taskInput, [section]: "" });
     saveProject(updatedProject);
   };
 
-  // Handle deleting a task
+  // Delete task
   const handleDeleteTask = (section, taskId) => {
     const updatedProject = { ...project };
-    updatedProject[section + "Tasks"] = updatedProject[section + "Tasks"].filter(
-      (task) => task.id !== taskId
-    );
+    updatedProject[section + "Tasks"] = updatedProject[
+      section + "Tasks"
+    ].filter((task) => task.id !== taskId);
 
     updatedProject[section] = Math.max(0, updatedProject[section] - 1);
+
+    // Recalculate stats
+    const allTasks = [
+      ...(updatedProject.todoTasks || []),
+      ...(updatedProject.inprogressTasks || []),
+      ...(updatedProject.reviewTasks || []),
+      ...(updatedProject.doneTasks || []),
+    ];
+    updatedProject.totalTasks = allTasks.length;
+    updatedProject.completedTasks = (updatedProject.doneTasks || []).length;
+
     saveProject(updatedProject);
   };
 
+  // Render each section (To Do, In Progress, etc.)
   const renderSection = (title, key, color) => (
     <div className="bg-white/90 rounded-lg shadow-md p-4 w-full">
-      <h3 className={`text-xl font-semibold mb-8 text-${color}-700`}>{title}</h3>
+      <h3 className={`text-xl font-semibold mb-8 text-${color}-700`}>
+        {title}
+      </h3>
 
       <div className="space-y-2 mb-4">
         {(project?.[key + "Tasks"] || []).map((task) => (
@@ -111,14 +156,17 @@ const StatusPage = () => {
         {project ? (
           <>
             <div className="text-center mb-10">
-              <h1 className="text-4xl font-bold mb-2 gradient-title">{project.title}</h1>
+              <h1 className="text-4xl font-bold mb-2 gradient-title">
+                {project.title}
+              </h1>
               <p className="text-white/90 text-lg">{project.description}</p>
               <p className="text-base text-gray-200 mt-1">
                 Deadline: {project.deadline}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            {/* Columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
               {renderSection("To Do", "todo", "blue")}
               {renderSection("In Progress", "inprogress", "yellow")}
               {renderSection("In Review", "review", "purple")}
@@ -131,11 +179,69 @@ const StatusPage = () => {
           </h1>
         )}
       </div>
-      <ContactSection background="bg-black"/>
+
+      {/* Progress Bar Section */}
+      {project && project.totalTasks > 0 && (
+        <div className="w-full animated-dotted-background3 max-w-3xl mx-auto mt-6  p-4 rounded shadow-md">
+          <div className="flex items-center gap-2 mb-2 text-left text-xl font-medium text-gray-700">
+            Progress:{" "}
+            <span className="text-lg text-[#080132]">
+              {Math.round((project.completedTasks / project.totalTasks) * 100)}%
+            </span>
+          </div>
+
+          {/* Progress Bar */}
+          <div className="w-full border border-black rounded-full h-4 overflow-hidden mb-4">
+            <div
+              className="bg-[#3b04a3ff] h-4 transition-all duration-500"
+              style={{
+                width: `${
+                  (project.completedTasks / project.totalTasks) * 100
+                }%`,
+              }}
+            ></div>
+          </div>
+
+          {/* Task Summary */}
+          <div className="flex justify-center text-sm font-medium text-gray-800 mb-6">
+            <span className="font-medium text-lg flex items-center">
+              <ListCheck /> Total: {project.totalTasks}
+            </span>
+          </div>
+
+          <div className="w-full h-64">
+            <ResponsiveContainer>
+              <PieChart>
+                <Pie
+                  data={[
+                    { name: "Completed", value: project.completedTasks },
+                    {
+                      name: "Left",
+                      value: project.totalTasks - project.completedTasks,
+                    },
+                  ]}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={80}
+                  label
+                >
+                  <Cell fill="#3b04a3ff" />
+                  <Cell fill="#686a6dff" />
+                </Pie>
+                <Tooltip />
+                <Legend verticalAlign="bottom" height={36} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
+
+      <ContactSection background="bg-black" />
       <Footer />
     </section>
   );
 };
 
 export default StatusPage;
-

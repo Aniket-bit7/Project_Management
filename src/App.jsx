@@ -4,7 +4,6 @@ import Register from "./authentication/Register";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ProjectsPage from "./pages/ProjectsPage";
-import ProgressPage from "./pages/ProgressPage";
 import ContactPage from "./pages/ContactPage";
 import Status from "./pages/Status";
 import Tasks from "./pages/Tasks";
@@ -26,7 +25,6 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<ProjectsPage />} />
-        <Route path="/progress" element={<ProgressPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/status/:id" element={<Status />} />
