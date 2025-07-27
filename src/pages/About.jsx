@@ -55,7 +55,7 @@ const About = () => {
               className="absolute top-0 left-0 w-full h-full object-cover rounded-lg border border-white/80 shadow-[0_2px_8px_rgba(255,255,255,0.6)]"
             >
               <source
-                src="src/assets/Screen Recording 2025-07-28 at 12.41.21 AM.mp4"
+                src="/Screen Recording 2025-07-28 at 12.41.21 AM.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

@@ -45,7 +45,7 @@ const Home = () => {
           {/* Image Section */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0 px-4 sm:px-6 lg:px-0">
             <img
-              src="src/assets/download (1).png"
+              src="/download (1).png"
               alt="Hero"
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[480px] object-contain"
             />

@@ -100,7 +100,7 @@ const Login = () => {
             className="flex items-center justify-center gap-2 w-full border border-white/30 hover:bg-white hover:text-black text-white font-semibold py-3 rounded-lg transition duration-300 cursor-pointer text-sm sm:text-base"
           >
             <img
-              src="src/assets/icons8-google-48.png"
+              src="/icons8-google-48.png"
               alt="Google Icon"
               className="w-5 h-5"
             />
